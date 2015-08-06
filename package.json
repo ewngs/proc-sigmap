@@ -1,0 +1,30 @@
+{
+  "name": "proc-sigmap",
+  "version": "0.1.0",
+  "description": "Process Signal Mapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewngs/proc-sigmap.git"
+  },
+  "keywords": [
+    "process",
+    "signal",
+    "sig",
+    "map",
+    "mapper",
+    "event"
+  ],
+  "author": {
+    "name": "Peter Kovacs",
+    "email": "kiwep@elasticwings.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ewngs/proc-sigmap/issues"
+  },
+  "homepage": "https://github.com/ewngs/proc-sigmap#readme"
+}
