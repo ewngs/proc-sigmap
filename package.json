@@ -1,6 +1,6 @@
 {
   "name": "proc-sigmap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Process Signal Mapper",
   "main": "index.js",
   "scripts": {
