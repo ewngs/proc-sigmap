@@ -4,7 +4,8 @@ var util = require('util');
 var EventEmitter = require('events').EventEmitter;
 
 function SigMapper(procMap) {
-    var self = this;
+    var self = this,
+        onMessage = this._onMessage.bind(this);
 
     EventEmitter.call(this);
 
@@ -13,12 +14,14 @@ function SigMapper(procMap) {
         SIGHUP: 'reload'
     };
 
-    process.on('message', this._onMessage.bind(this));
+    process.on('message', onMessage);
 
     // register mapped event handlers
     Object.keys(this._procMap).forEach(function (key) {
         process.on(key, (function (toMsg) {
             return function () {
+                // We need to detach our message listener because it will prevent graceful termination
+                process.removeListener('message', onMessage);
                 var args = Array.prototype.slice.call(arguments);
                 args.unshift(toMsg);
                 self._onMessage.apply(self, args);
