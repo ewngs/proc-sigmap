@@ -20,8 +20,6 @@ function SigMapper(procMap) {
     Object.keys(this._procMap).forEach(function (key) {
         process.on(key, (function (toMsg) {
             return function () {
-                // We need to detach our message listener because it will prevent graceful termination
-                process.removeListener('message', onMessage);
                 var args = Array.prototype.slice.call(arguments);
                 args.unshift(toMsg);
                 self._onMessage.apply(self, args);
