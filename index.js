@@ -43,6 +43,12 @@ SigMapper.prototype._onMessage = function (data) {
     this.emit(msgName, msgData);
 };
 
+SigMapper.prototype.disconnect = function () {
+    if (process.disconnect) {
+        process.disconnect();
+    }
+};
+
 module.exports = function (procMap) {
     return new SigMapper(procMap);
 };
