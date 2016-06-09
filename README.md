@@ -1,6 +1,6 @@
 # Simple process signal mapper Node.js module
 
-[![Build Status](https://travis-ci.org/ewngs/proc-sigmapper.svg?branch=master)](https://travis-ci.org/ewngs/proc-sigmapper)
+[![Build Status](https://travis-ci.org/ewngs/proc-sigmap.svg?branch=master)](https://travis-ci.org/ewngs/proc-sigmap)
 
 So you want to handle signals like SIGINT but also IPC messages too. SigMapper gives you a standard interface that allows renaming/redirecting messages and handles received IPC data.
 
